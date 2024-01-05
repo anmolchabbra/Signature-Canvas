@@ -12,7 +12,18 @@
 </head>
 <body>
     <canvas id="signatureCanvas" width="700" height="500"></canvas>
-    <button onclick="clearCanvas()">Clear Canvas</button>
+    
+    <div>
+        <label for="downloadFormat">Select Format:</label>
+        <select id="downloadFormat">
+          <option value="png">PNG</option>
+          <option value="jpeg">JPEG</option>
+          <option value="svg">SVG</option>
+        </select>
+      
+        <button onclick="downloadSignature()">Download</button>
+        <button onclick="clearCanvas()">Clear Canvas</button>
+      </div>
     <script src="app.js"></script>
 </body>
 </html>

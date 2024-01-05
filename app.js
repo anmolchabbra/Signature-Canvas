@@ -47,3 +47,15 @@ function clearCanvas() {
   //Clear the entire canvas by filing it with transparent color
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+//function to download signature in various formats
+function downloadSignature() {
+  const selectedFormat = document.getElementById('downloadFormat').value;
+  const dataURL = canvas.toDataURL(`image/${selectedFormat}`);
+  const a = document.createElement('a');
+  a.href = dataURL;
+  a.download = `signature.${selectedFormat}`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
