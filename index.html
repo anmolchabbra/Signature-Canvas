@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signature App By Anmol</title>
-    <style>
-        canvas {
-            border: 2px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <canvas id="signatureCanvas" width="700" height="500"></canvas>
@@ -22,7 +18,7 @@
         </select>
         
         <input type="color" id="strokeColor" value="#000000" onchange="changeStrokeColor(event)">
-        
+
         <button onclick="downloadSignature()">Download</button>
         <button onclick="clearCanvas()">Clear Canvas</button>
       </div>
