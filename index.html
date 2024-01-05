@@ -20,7 +20,9 @@
           <option value="jpeg">JPEG</option>
           <option value="svg">SVG</option>
         </select>
-      
+        
+        <input type="color" id="strokeColor" value="#000000" onchange="changeStrokeColor(event)">
+        
         <button onclick="downloadSignature()">Download</button>
         <button onclick="clearCanvas()">Clear Canvas</button>
       </div>

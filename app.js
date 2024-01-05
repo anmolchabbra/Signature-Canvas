@@ -2,6 +2,7 @@ const canvas = document.getElementById('signatureCanvas');
 const context = canvas.getContext('2d');
 
 let isDrawing = false;
+let strokeColor = 'black';
 
 //Adding event listener for mouse interactions
 canvas.addEventListener('mousedown', startDrawing);
@@ -23,13 +24,23 @@ function stopDrawing(e) {
   context.beginPath();
 }
 
+
+function setUpContext() {
+  //Set up the drawing style
+  context.lineWidth = 2;
+  context.lineCap = 'round';
+  context.strokeStyle = strokeColor;
+}
+
 function draw(e) {
   if (!isDrawing) return;
 
   //Set up the drawing style
   context.lineWidth = 2;
   context.lineCap = 'round';
-  context.strokeStyle = 'black';
+  context.strokeStyle = strokeColor;
+
+  setUpContext()
 
   //Draw line
   context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
@@ -58,4 +69,11 @@ function downloadSignature() {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
+
+
+
+function changeStrokeColor(e) {
+  strokeColor = e.target.value;
+  setUpContext();
 }
